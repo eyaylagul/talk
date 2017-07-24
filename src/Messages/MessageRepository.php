@@ -1,6 +1,6 @@
 <?php
 
-namespace Nahid\Talk\Messages;
+namespace Eyaylagul\Talk\Messages;
 
 use SebastianBerc\Repositories\Repository;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Nahid\Talk\Facades;
+namespace Eyaylagul\Talk\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

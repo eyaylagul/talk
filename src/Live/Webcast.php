@@ -1,6 +1,6 @@
 <?php
 
-namespace Nahid\Talk\Live;
+namespace Eyaylagul\Talk\Live;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;

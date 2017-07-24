@@ -9,12 +9,12 @@
  * @license https://creativecommons.org/licenses/by/4.0/ (CC BY 4.0)
  */
 
-namespace Nahid\Talk;
+namespace Eyaylagul\Talk;
 
 use Illuminate\Contracts\Config\Repository;
-use Nahid\Talk\Conversations\ConversationRepository;
-use Nahid\Talk\Messages\MessageRepository;
-use Nahid\Talk\Live\Broadcast;
+use Eyaylagul\Talk\Conversations\ConversationRepository;
+use Eyaylagul\Talk\Messages\MessageRepository;
+use Eyaylagul\Talk\Live\Broadcast;
 
 class Talk
 {
@@ -139,13 +139,14 @@ class Talk
      *
      * @return int
      */
-    protected function newConversation($receiverId)
+    protected function newConversation($receiverId, $threadId)
     {
-        $conversationId = $this->isConversationExists($receiverId);
+        $conversationId = $this->isConversationExists($receiverId, $threadId);
         $user = $this->getSerializeUser($this->authUserId, $receiverId);
 
         if ($conversationId === false) {
             $conversation = $this->conversation->create([
+            	'thread_id' => $threadId,
                 'user_one' => $user['one'],
                 'user_two' => $user['two'],
                 'status' => 1,
@@ -199,7 +200,7 @@ class Talk
      *
      * @return bool|int
      */
-    public function isConversationExists($userId)
+    public function isConversationExists($userId, $threadId)
     {
         if (empty($userId)) {
             return false;
@@ -207,7 +208,7 @@ class Talk
 
         $user = $this->getSerializeUser($this->authUserId, $userId);
 
-        return $this->conversation->isExistsAmongTwoUsers($user['one'], $user['two']);
+        return $this->conversation->isExistsAmongTwoUsers($user['one'], $user['two'], $threadId);
     }
 
     /**
@@ -256,15 +257,15 @@ class Talk
      *
      * @return \Nahid\Talk\Messages\Message
      */
-    public function sendMessageByUserId($receiverId, $message)
+    public function sendMessageByUserId($receiverId, $message, $threadId)
     {
-        if ($conversationId = $this->isConversationExists($receiverId)) {
+        if ($conversationId = $this->isConversationExists($receiverId, $threadId)) {
             $message = $this->makeMessage($conversationId, $message);
 
             return $message;
         }
 
-        $convId = $this->newConversation($receiverId);
+        $convId = $this->newConversation($receiverId, $threadId);
         $message = $this->makeMessage($convId, $message);
 
         return $message;
@@ -280,7 +281,7 @@ class Talk
      */
     public function getInbox($order = 'desc', $offset = 0, $take = 20)
     {
-        return $this->conversation->threads($this->authUserId, $order, $offset, $take);
+        return $this->conversation->getThread($this->authUserId, $order, $offset, $take);
     }
 
     /**

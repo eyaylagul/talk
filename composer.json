@@ -1,13 +1,13 @@
 {
-    "name": "nahid/talk",
+    "name": "Eyaylagul/talk",
     "description": "Talk is a Laravel 5 based realtime messaging, chatting and conversation system. It helps to develop users messaging, chatting and conversations in easy way.",
     "keywords": ["message", "inbox", "conversations", "chat", "php", "laravel", "realtime", "real-time"],
-    "homepage": "https://github.com/nahid/talk",
+    "homepage": "https://github.com/eyaylagul/talk",
     "license": "CC(3.0)",
     "authors": [
         {
-            "name": "Nahid Bin Azhar",
-            "email": "nahid.dns@gmail.com"
+            "name": "Emre Yaylagül",
+            "email": "emreyaylahul@yandex.com.tr"
         }
     ],
   "require": {
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Nahid\\Talk\\": "src/"
+      "Eyaylagul\\Talk\\": "src/"
     },
     "files": [
       "src/helpers/talk.php"
@@ -32,7 +32,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Nahid\\Talk\\Tests\\": "tests/"
+      "Eyaylagul\\Talk\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev",

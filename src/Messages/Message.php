@@ -1,6 +1,6 @@
 <?php
 
-namespace Nahid\Talk\Messages;
+namespace Eyaylagul\Talk\Messages;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -40,7 +40,7 @@ class Message extends Model
      * */
     public function conversation()
     {
-        return $this->belongsTo('Nahid\Talk\Conversations\Conversation');
+        return $this->belongsTo('Eyaylagul\Talk\Conversations\Conversation');
     }
 
     /*

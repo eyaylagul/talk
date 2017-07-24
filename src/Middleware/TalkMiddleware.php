@@ -1,10 +1,10 @@
 <?php
 
-namespace Nahid\Talk\Middleware;
+namespace Eyaylagul\Talk\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Nahid\Talk\Facades\Talk;
+use Eyaylagul\Talk\Facades\Talk;
 
 class TalkMiddleware
 {

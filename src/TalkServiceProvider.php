@@ -1,13 +1,13 @@
 <?php
 
-namespace Nahid\Talk;
+namespace Eyaylagul\Talk;
 
 use Illuminate\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
-use Nahid\Talk\Conversations\ConversationRepository;
-use Nahid\Talk\Messages\MessageRepository;
+use Eyaylagul\Talk\Conversations\ConversationRepository;
+use Eyaylagul\Talk\Messages\MessageRepository;
 
 class TalkServiceProvider extends ServiceProvider
 {

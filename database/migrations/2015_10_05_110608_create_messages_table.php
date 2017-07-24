@@ -16,7 +16,8 @@ class CreateMessagesTable extends Migration
             $tbl->boolean('deleted_from_sender')->default(0);
             $tbl->boolean('deleted_from_receiver')->default(0);
             $tbl->integer('user_id');
-            $tbl->integer('conversation_id');
+            $tbl->integer('conversation_id')->unsigned();
+            $tbl->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
             $tbl->timestamps();
         });
     }

@@ -11,8 +11,10 @@ class CreateConversationsTable extends Migration
     {
         Schema::create('conversations', function ($tbl) {
             $tbl->increments('id');
-            $tbl->integer('user_one');
-            $tbl->integer('user_two');
+            $tbl->integer('user_one')->unsigned();
+            $tbl->integer('user_two')->unsigned();
+            $tbl->integer('thread_id')->unsigned();
+            $tbl->foreign('thread_id')->references('id')->on(config('talk.user.thread.table'))->onDelete('cascade');
             $tbl->boolean('status');
             $tbl->timestamps();
         });

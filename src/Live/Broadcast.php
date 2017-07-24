@@ -1,10 +1,10 @@
 <?php
 
-namespace Nahid\Talk\Live;
+namespace Eyaylagul\Talk\Live;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Contracts\Config\Repository;
-use Nahid\Talk\Messages\Message;
+use Eyaylagul\Talk\Messages\Message;
 use Pusher;
 
 class Broadcast

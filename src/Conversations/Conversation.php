@@ -1,6 +1,6 @@
 <?php
 
-namespace Nahid\Talk\Conversations;
+namespace Eyaylagul\Talk\Conversations;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,7 @@ class Conversation extends Model
     public $fillable = [
         'user_one',
         'user_two',
+        'thread_id',
         'status',
     ];
 
@@ -21,7 +22,7 @@ class Conversation extends Model
      * */
     public function messages()
     {
-        return $this->hasMany('Nahid\Talk\Messages\Message', 'conversation_id')
+        return $this->hasMany('Eyaylagul\Talk\Messages\Message', 'conversation_id')
             ->with('sender');
     }
 
@@ -43,5 +44,15 @@ class Conversation extends Model
     public function usertwo()
     {
         return $this->belongsTo(config('talk.user.model', 'App\User'),  'user_two');
+    }
+
+    /*
+   * make a relation between Thread from conversation
+   *
+   * return collection
+   * */
+    public function thread()
+    {
+    	return $this->belongsTo(config('talk.user.thread.model', 'App\Models\UserTreatment'), 'thread_id');
     }
 }

@@ -3,6 +3,10 @@
 return [
     'user' => [
         'model' => 'App\User',
+        'thread' => [
+	        'model' => 'App\Models\UserTreatment',
+	        'table' => 'user_treatments'
+        ]
     ],
     'broadcast' => [
         'enable' => false,
