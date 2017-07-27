@@ -9,4 +9,4 @@ Talk is a Laravel 5 based user conversation (inbox) system with realtime messagi
 Talk v2.1.0 is supported realtime messaging. Learn more about [Talk Live Messaging](https://github.com/nahid/talk#realtime-messaging) 
 
 
-This package extended from Nahid/Talk package
+This package extended from Nahid/Talk package.
