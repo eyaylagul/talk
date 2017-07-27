@@ -1,9 +1,9 @@
 <?php
 
-namespace Nahid\Talk\Tests;
+namespace Eyaylagul\Talk\Tests;
 
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
-use Nahid\Talk\Talk;
+use Eyaylagul\Talk\Talk;
 
 /**
  * This is the service provider test class.

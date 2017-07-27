@@ -1,9 +1,9 @@
 <?php
 
-namespace Nahid\Talk\Tests\Facades;
+namespace Eyaylagul\Talk\Tests\Facades;
 
 use GrahamCampbell\TestBenchCore\FacadeTrait;
-use Nahid\Talk\Tests\TestCase;
+use Eyaylagul\Talk\Tests\TestCase;
 
 /**
  * This is the Talk facade test class.
@@ -29,7 +29,7 @@ class Talk extends TestCase
      */
     protected function getFacadeClass()
     {
-        return \Nahid\Talk\Facades\Talk::class;
+        return \Eyaylagul\Talk\Facades\Talk::class;
     }
 
     /**
@@ -39,6 +39,6 @@ class Talk extends TestCase
      */
     protected function getFacadeRoot()
     {
-        return \Nahid\Talk\Talk::class;
+        return \Eyaylagul\Talk\Talk::class;
     }
 }
